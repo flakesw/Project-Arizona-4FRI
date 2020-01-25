@@ -1,0 +1,16 @@
+LandisData  "Output Biomass-by-Age"
+
+Timestep   1
+
+MapNames   outputs/spp-biomass-by-age/{species}-{ageclass}-{timestep}.img
+
+Species	PinuPond  	ageclass1(1-10) ageclass2(11-40) ageclass3(41-80) ageclass4(81-110) ageclass5(>110)
+	PseuMenz	ageclass1(1-20) ageclass2(21-40) ageclass3(41-80) ageclass4(81-120) ageclass5(>120)
+	AbieConc	ageclass1(1-30) ageclass2(31-50) ageclass3(51-80) ageclass4(81-120) ageclass5(>120) 
+	AbieLasi	ageclass1(1-30) ageclass2(31-50) ageclass3(51-80) ageclass4(81-120) ageclass5(>120) 	
+	PiceEnge	ageclass1(1-20) ageclass2(21-50) ageclass3(51-80) ageclass4(81-110) ageclass5(>110) 	
+	PicePung 	ageclass1(1-20) ageclass2(21-50) ageclass3(51-80) ageclass4(81-110) ageclass5(>110)
+	QuerGamb	ageclass1(1-40) ageclass2(41-70) ageclass3(71-130) ageclass4(131-180) ageclass5(>180)	
+	JuniOste	ageclass1(1-40) ageclass2(41-70) ageclass3(71-120) ageclass4(121-170) ageclass5(>170)
+	PinuEdul	ageclass1(1-20) ageclass2(21-70) ageclass3(71-130) ageclass4(131-180) ageclass5(>180)
+	PopuTrem	ageclass1(1-40) ageclass2(41-60) ageclass3(61-90) ageclass4(91-120) ageclass5(>120)
