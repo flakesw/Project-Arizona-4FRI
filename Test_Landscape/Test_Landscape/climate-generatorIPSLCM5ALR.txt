@@ -1,0 +1,9 @@
+LandisData "Climate Config"				
+		
+ClimateTimeSeries			Daily_SequencedYears
+ClimateFile				"C:\Landis\Test_Landscape\IPSLCM5ALR_future_all.csv"
+ClimateFileFormat			Daily_Temp-C_Precip-mmDay
+
+SpinUpClimateTimeSeries			Daily_RandomYears
+SpinUpClimateFile			"C:\Landis\Test_Landscape\spinup_1981_2010_new.csv"
+SpinUpClimateFileFormat			Daily_Temp-C_Precip-mmDay

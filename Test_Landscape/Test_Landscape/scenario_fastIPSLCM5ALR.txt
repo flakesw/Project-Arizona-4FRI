@@ -1,0 +1,47 @@
+LandisData  Scenario
+
+Duration  90
+
+Species   "C:/Landis/Test_Landscape/species.txt"
+
+Ecoregions      "C:/Landis/Test_Landscape/ecoregions.txt"
+EcoregionsMap   "C:/Landis/Test_Landscape/FireRegion.tif"
+
+CellLength  100 << meters, 100 x 100 m = 1 ha
+
+
+>> Succession Extension     Initialization File
+>> --------------------     -------------------
+   "NECN Succession"        "C:/Landis/Test_Landscape/NECN-successionIPSLCM5ALR.txt"
+
+
+>> Disturbance Extensions   Initialization File
+>> ----------------------   -------------------
+>>"Base Fire"			base-fire.txt
+
+>>   DisturbancesRandomOrder  yes  << optional parameter; default = no
+
+
+>> Other Extensions         	Initialization File
+>> ----------------         	------------------
+>>   "Output Cohort Stats"    	cohort-stats.output.txt
+
+>> Disturbance Extensions Initialization File
+>> ---------------------- -------------------
+   
+	"Dynamic Fuel System"    "C:/Landis/Test_Landscape/DynamicFuels.txt"
+	"Dynamic Fire System"    "C:/Landis/Test_Landscape/DynamicFire.txt"
+	"Biomass Harvest"		 "C:/Landis/Test_Landscape/Harvest_fast.txt"
+	
+
+>> ------------------------
+>> OUTPUT EXTENSONS
+>> ----------------------
+
+>> 	Output Extension		Initialization File
+>> 	----------------		-------------------
+	"Output Biomass"		"C:/Landis/Test_Landscape/output_Biomass.txt"
+	"Output Biomass-by-Age"		"C:/Landis/Test_Landscape/output_Biomass-by-Age.txt"
+
+>>RandomNumberSeed  4,357  << optional parameter; default = the seed is
+                         << randomly generated using the current time

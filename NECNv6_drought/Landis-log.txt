@@ -1,0 +1,45 @@
+2022-04-06 14:20:13,157 - LANDIS-II 7.0 (7)
+2022-04-06 14:20:13,169 - 
+2022-04-06 14:20:13,286 - Loading scenario from file "scenario_necn6.txt" ...
+2022-04-06 14:20:13,417 - Initialized random number generator with seed = 3,939,264,734
+2022-04-06 14:20:13,418 - Loading species data from file "./species.txt" ...
+2022-04-06 14:20:13,458 - Loading ecoregions from file "./ecoregions.txt" ...
+2022-04-06 14:20:13,486 - Initializing landscape from ecoregions map "./ecoregions.tif" ...
+2022-04-06 14:20:13,516 - Cell length = 100 m, cell area = 1 ha
+2022-04-06 14:20:13,520 - Map dimensions: 1,341 rows by 903 columns = 1,210,923 cells
+2022-04-06 14:20:13,734 - Sites: 386,171 active (31.9%), 824,752 inactive (68.1%)
+2022-04-06 14:20:14,108 - Loading NECN Succession extension ...
+2022-04-06 14:20:14,180 -    Begin parsing NECN SPECIES table.
+2022-04-06 14:20:14,218 -    Begin parsing FUNCTIONAL GROUP table.
+2022-04-06 14:20:14,224 -    Begin reading FIRE REDUCTION parameters.
+2022-04-06 14:20:14,226 -    Begin reading HARVEST REDUCTION parameters.
+2022-04-06 14:20:14,239 - Initializing NECN Succession ...
+2022-04-06 14:20:14,397 -    Registering Data:  Succession.LeafBiomassCohorts.
+2022-04-06 14:20:14,398 -    Registering Data:  Succession.AgeCohorts.
+2022-04-06 14:20:14,398 -    Registering Data:  Succession.BiomassCohorts.
+2022-04-06 14:20:14,398 -    Registering Data:  Succession.FineFuels.
+2022-04-06 14:20:14,398 -    Registering Data:  Succession.SmolderConsumption.
+2022-04-06 14:20:14,399 -    Registering Data:  Succession.FlamingConsumption.
+2022-04-06 14:20:14,399 -    Registering Data:  Succession.CWD.
+2022-04-06 14:20:14,399 -    Registering Data:  Succession.PET.
+2022-04-06 14:20:19,178 -   Read in data from ./NECNmaps/SoilDepth.tif
+2022-04-06 14:20:19,368 -   Read in data from ./NECNmaps/SoilDrain.tif
+2022-04-06 14:20:19,565 -   Read in data from ./NECNmaps/SoilBaseFlow.tif
+2022-04-06 14:20:19,749 -   Read in data from ./NECNmaps/SoilStormFlow.tif
+2022-04-06 14:20:19,936 -   Read in data from ./NECNmaps/SoilFieldCapacity.tif
+2022-04-06 14:20:20,133 -   Read in data from ./NECNmaps/SoilWiltPoint.tif
+2022-04-06 14:20:20,352 -   Read in data from ./NECNmaps/soilpersand.tif
+2022-04-06 14:20:20,548 -   Read in data from ./NECNmaps/soilperclay.tif
+2022-04-06 14:20:20,741 -   Read in data from ./NECNmaps/SOM1Csurf.tif
+2022-04-06 14:20:20,997 -   Read in data from ./NECNmaps/SOM1Nsurf.tif
+2022-04-06 14:20:21,222 -   Read in data from ./NECNmaps/SOM1Csoil.tif
+2022-04-06 14:20:21,491 -   Read in data from ./NECNmaps/SOM1Nsoil.tif
+2022-04-06 14:20:21,737 -   Read in data from ./NECNmaps/SOM2C.tif
+2022-04-06 14:20:21,995 -   Read in data from ./NECNmaps/SOM2N.tif
+2022-04-06 14:20:22,288 -   Read in data from ./NECNmaps/SOM3C.tif
+2022-04-06 14:20:22,527 -   Read in data from ./NECNmaps/SOM3N.tif
+2022-04-06 14:20:22,810 -   Read in data from ./NECNmaps/InitialDeadWoodSurface.tif
+2022-04-06 14:20:23,295 -   Read in data from ./NECNmaps/InitialDeadWoodSurface.tif
+2022-04-06 14:20:23,560 -   Read in data from ./NECNmaps/SoilFieldCapacity.tif
+2022-04-06 14:20:23,796 -   Read in data from ./NECNmaps/SOM1Nsoil.tif
+2022-04-06 14:20:24,033 -    Loading weather data ...
