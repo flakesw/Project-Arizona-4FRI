@@ -1,6 +1,6 @@
 LandisData  Scenario
 
-Duration  30
+Duration  100
 
 Species   "./species.txt"
 
@@ -14,10 +14,6 @@ CellLength  100 << meters, 100 x 100 m = 1 ha
 >> --------------------     -------------------
    "NECN Succession"        "./NECN_Succession6.txt"
 
-
->> Disturbance Extensions   Initialization File
->> ----------------------   -------------------
->>"Base Fire"			base-fire.txt
 
 >>   DisturbancesRandomOrder  yes  << optional parameter; default = no
 

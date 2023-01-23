@@ -2,9 +2,9 @@ LandisData  "Biomass Harvest"
 
 Timestep    1
 
-ManagementAreas "E:/Landis/management_areas.tif"
+ManagementAreas "./management_areas.tif"
 
-Stands      "E:/Landis/standsMAunion.tif"
+Stands      "./standsMAunion.tif"
 
 
 >> ***************
@@ -613,12 +613,12 @@ Prescription UEA40	<<
 	1	RxOnlyInitial				1.18%			0		20
 	2	RxOnlyInitial				1.18%			0		20
 	3	RxOnlyInitial				1.18%			0		20
-	1	RxOnlyMaintenance			1.03%			21		100
-	2	RxOnlyMaintenance			1.03%			21		100
-	3	RxOnlyMaintenance			1.03%			21		100
-	4	RxOnlyMaintenance			1.03%			21		100
-	5	RxOnlyMaintenanceGrassland		1.03%			21		100
-	6	RxOnlyMaintenanceSavanna		1.03%			21		100
+	1	RxOnlyMaintenance			1.03%			21		30
+	2	RxOnlyMaintenance			1.03%			21		30
+	3	RxOnlyMaintenance			1.03%			21		30
+	4	RxOnlyMaintenance			1.03%			21		30
+	5	RxOnlyMaintenanceGrassland		1.03%			21		30
+	6	RxOnlyMaintenanceSavanna		1.03%			21		30
 	
 	
 	

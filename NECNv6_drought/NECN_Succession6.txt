@@ -26,14 +26,14 @@ InitialSOM3CMapName			"./NECNmaps/SOM3C.tif"
 InitialSOM3NMapName			"./NECNmaps/SOM3N.tif"
 InitialDeadWoodSurfaceMapName		"./NECNmaps/InitialDeadWoodSurface.tif"
 InitialDeadCoarseRootsMapName		"./NECNmaps/InitialDeadWoodSurface.tif"
-NormalSWAMapName 			"./NECNmaps/SoilFieldCapacity.tif" <<optional, for use with drought mortality. If not available yet, then make a dummy and set Use_Drought_Mortality to no, so you don't kill everything
-NormalCWDMapName			"./NECNmaps/SOM1Nsoil.tif" <<optional, for use with drought mortality
+NormalSWAMapName 			"./SWA_normals.tif" <<optional, for use with drought mortality. If not available yet, then make a dummy and set Use_Drought_Mortality to no, so you don't kill everything
+NormalCWDMapName			"./CWD_normals.tif" <<optional, for use with drought mortality
 
 CalibrateMode 	no
 SmokeModelOutputs yes
-Use_Drought_Mortality no
-Write_SWA_Maps yes
-Write_CWD_Maps yes
+Use_Drought_Mortality yes
+Write_SWA_Maps no
+Write_CWD_Maps no
 WaterDecayFunction Ratio <<Linear or Ratio
 
 
@@ -99,6 +99,19 @@ HarvestReductionParameters
 >>			Reduct		Reduct	Reduction	Removal		Removal
 	MaxAgeClearcut	0.5		0.15	0.2		0.8		0.15
 	PatchCutting	1.0		1.0	1.0		1.0		1.0
-
-
-   
+	Grassland	0.9		0.14	0.1		0.95		0.25
+	Savanna		0.9		0.14	0.1		0.95		0.25
+	IT10		0.8		0.14	0.1		0.85		0.25
+	UEA10		0.8		0.14	0.1		0.85		0.25
+	SI10		0.8		0.14	0.1		0.85		0.25
+	IT25		0.8		0.14	0.1		0.85		0.25
+   	UEA25		0.8		0.14	0.1		0.85		0.25
+	SI25		0.8		0.14	0.1		0.85		0.25
+	IT40		0.8		0.14	0.1		0.85		0.25
+	UEA40		0.8		0.14	0.1		0.85		0.25
+	SI40		0.8		0.14	0.1		0.85		0.25
+	RxOnlyInitial	0.8		0.14	0.1		0.85		0.25
+RxOnlyMaintenance	0.8		0.14	0.1		0.85		0.25
+RxOnlyMaintenanceGrassland 0.8		0.14	0.1		0.85		0.25
+RxOnlyMaintenanceSavanna 0.8		0.14	0.1		0.85		0.25
+	
