@@ -31,7 +31,6 @@ NormalCWDMapName			"./CWD_normals.tif" <<optional, for use with drought mortalit
 
 CalibrateMode 	no
 SmokeModelOutputs yes
-Use_Drought_Mortality yes
 Write_SWA_Maps no
 Write_CWD_Maps no
 WaterDecayFunction Ratio <<Linear or Ratio
@@ -74,8 +73,9 @@ LightEstablishmentTable
 
 SpeciesParameters "./necn_species_params.csv"
 
-
 FunctionalGroupParameters  "./necn_functional_params.csv"
+
+DroughtMortalityParameters "./necn_drought_params.csv"
 
 FireReductionParameters
 >> Updated 3/10/2022 by Sam Flake.
