@@ -1,0 +1,174 @@
+LandisData  "NECN Succession"
+
+Timestep  1
+
+SeedingAlgorithm  WardSeedDispersal
+
+InitialCommunities      "E:/Landis/Init_Comm.txt"
+InitialCommunitiesMap   "E:/Landis/init_comm32.tif"
+
+ClimateConfigFile	"E:/Landis/climate-generator.txt"
+
+CalibrateMode 	no
+
+SpinupMortalityFraction 0.0002
+
+WaterDecayFunction Ratio <<Linear or Ratio
+
+ProbEstablishAdjust 0.2
+
+ANPPMapNames		century/ag_npp-{timestep}.img
+ANPPMapFrequency	10
+ANEEMapNames		century/nee-{timestep}.img
+ANEEMapFrequency	10
+TotalCMapNames		century/total_C-{timestep}.img
+TotalCMapFrequency	10
+
+AvailableLightBiomass
+
+>> Shade	Percent Max Biomass
+>> Class	by Ecoregions
+>> --------------------------------------------------------------------------------------------------------------------	
+			Clay1	Clay2	Clay3	ClayLoam1	ClayLoam2	ClayLoam3	ClayLoam4	Sands1	Sands2	Sands3	Sands4	Shallow1	Shallow2	Shallow3 
+	1  		15%	 	15%		15%		15%			15%			15%			15%	 		15%		15%		15%		15%		15%			15%	 		15%
+	2  		25%	 	25%		25%		25%			25%			25%			25%	 		25%		25%		25%		25%		25%			25%			25%
+	3  		50%   	50%		50%		50%			50%			50%			50%			50%		50%		50%		50%		50%			50%			50%
+	4  		80%	 	80%		80%		80%			80%			80% 		80%			80%		80%		80%		80%		80%			80%			80%  
+	5  		95% 	95%		95%		95%			95%			95%			95%			95%		95%		95%		95%		95%			95%			95%
+
+LightEstablishmentTable
+>> Spp Shade	Probability
+>> Class	by Actual Shade
+>> ----------	--------------------	
+>>		0		1		2		3		4		5
+	1	1.0		0.5		0.25	0.0		0.0		0.0
+	2	1.0		1.0		0.5		0.25	0.0		0.0
+	3	1.0		1.0		1.0		0.5		0.25	0.0
+	4	1.0		1.0		1.0		1.0		0.5		0.25
+	5	0.1		0.5		1.0		1.0		1.0		1.0
+
+SpeciesParameters
+
+>>Species	Leaf	Woody	Mortality Curve	Leaf				
+>>		Long	DecayR	Shape Parameter	Lignin%				
+>>----------------------------------------------								
+>> Species  Funct	N		GDD		GDD		Min		Max		Leaf	Epi-	Leaf	FRoot	Wood	CRoot	Leaf  	FRoot 	Wood  	CRoot 	Littr 	
+>>	    	ional	Fixer	Min		Max		Jan		Drought	Long	cormic	Lign%	Lign%	Lign%	Lign%	CN    	CN    	CN    	CN    	CN	
+>> 	    	Type							Temp					re-
+>> ----------------------------------------------------------------------------------------------------------------------------------------------------
+AbieConc	1		N		540		2670	-10		0.93	8.00	N		0.17	0.2		0.25	0.25	30		30		333		222		100	 		<< Lake Tahoe Landis Github and Loudermilk et al. 2013
+AbieLasi	1		N		540		2670	-10		0.93	8.00	N		0.17	0.2		0.25	0.25	30		30		333		222		100			<< Lake Tahoe Landis Github and Loudermilk et al. 2013
+JuniOste	1		N		247		3749	-14		0.42	6		N		0.24	0.22	0.29	0.29	42		58		160		337		100     	<< from Liang et al. 2016 Sierra Nevada
+PiceEnge	1		N		280		1911	-30		0.2472	3		N		0.249	0.258	0.4		0.234	45.8 	43		500		84		55			<< Lucash MN. Engelmann is closely related to white spruce 
+PicePung	1		N		280		1911	-30		0.2472	3		N		0.249	0.258	0.4		0.234	45.8 	43		500		84		55			<< Lucash MN. Engelmann is closely related to white spruce 
+PinuPond    1		N   	155 	4000    -5      0.92    4.5     N       0.28    0.2    	0.25    0.25    48  	48      250  	170   	100      	<< from Hurteau files
+PinuEdul	1		N		400		4000	-11		0.9		8		N		0.3		0.25	0.3		0.3		48		48.5	95.6	90		84.39		<< Klopatek et al. 1994, Pregitzer et al. 2002
+PopuTrem	2		N		600		3000	-10		0.82	1.00	Y		0.18	0.2		0.25	0.25	62		62		333		222		100	 	 	<< Lake Tahoe Landis Github and Loudermilk et al. 2013
+PseuMenz	1		N		300		4750	-12		0.8		8		N		0.205	0.30	0.29	0.33	45		36		400		189		77.25	 	<< Cassell E OR	
+QuerGamb	2  		N   	800 	4000    -5      0.9     1.0     Y       0.175   0.23   	0.23    0.23    30  	 48     500  	333    	46       	<< from Hurteau files
+
+
+FunctionalGroupParameters  <<from tree.100									Age	Leaf
+>> Name	Index	PPDF1	PPDF2	PPDF3	PPDF4	FCFRAC	BTOLAI		KLAI	MAXLAI	PPRPTS2	PPRPTS3	Wood	Monthly		Mort	Drop   CRootFrac FRootFRac
+>> 		T-Mean	T-Max	T-shape	T-shape	leaf														DecayR	WoodMort	Shape	Month
+Conifer   1     16.0    30.0    0.8       3.0    0.2     0.004    5000      10    	1.0     0.5    	0.4     0.002    	10       10			1		1
+Hardwood  2     23.0    35.0    0.05      7.0    0.3     0.004    5000      20      1.0     0.5     0.4     0.002       10       10			0.5		0.5
+
+
+>> Note:  The on-line Century guide and 
+>> default parameters suggest MaxLAI = 20.0
+
+InitialEcoregionParameters
+>> 			SOM1	SOM1	SOM1	SOM1	SOM2	SOM2	SOM3	SOM3	Minrl
+>> 	  		C		 N		 C		 N		 C	 	 N		 C		 N		 N
+>> 			surf	surf	soil	soil
+>>_________________________________________________________________________
+Clay1 		412		4.5		90      7.5     2100    42      810   	20    	2.4
+Clay2 		412		4.5		90      7.5     2100    42      810   	20    	2.4
+Clay3 		412		4.5		90      7.5     2100    42      810   	20    	2.4
+ClayLoam1 	412		4.5		90      7.5     2100    42      810   	20    	2.4
+ClayLoam2 	412		4.5		90      7.5     2100    42      810   	20    	2.4
+ClayLoam3 	412		4.5		90      7.5     2100    42      810   	20    	2.4
+ClayLoam4 	412		4.5		90      7.5     2100    42      810   	20    	2.4
+Sands1 		412		4.5		90      7.5     2100    42      810   	20    	2.4
+Sands2		412		4.5		90      7.5     2100    42      810   	20    	2.4
+Sands3 		412		4.5		90      7.5     2100    42      810   	20    	2.4
+Sands4 		412		4.5		90      7.5     2100    42      810   	20    	2.4
+Shallow1 	412		4.5		90      7.5     2100    42      810   	20    	2.4
+Shallow2 	412		4.5		90      7.5     2100    42      810   	20    	2.4
+Shallow3 	412		4.5		90      7.5     2100    42      810   	20    	2.4
+
+	
+EcoregionParameters
+>>				Soil	Percent	Percent	 Field	Wilt	StormF	BaseF	Drain	Atmos	Atmos	Lat-	Decay	Decay	Decay	Decay	Denit
+>>				Depth	Clay	Sand	 Cap	Point	Fract	Fract			N		N		itude	Rate	Rate	Rate	Rate	Slope
+>>    			cm										frac	frac			slope	inter			Surf	SOM1	SOM2	SOM3
+>> _________________________________________________________________________________________________________________________________________________
+Clay1			100		0.45	0.30	 0.42	0.30	0.3		0.6		0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+Clay2			100		0.45	0.30	 0.42	0.30	0.3		0.6		0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+Clay3			100		0.45	0.30	 0.42	0.30	0.3		0.6		0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+ClayLoam1 		100		0.36    0.35     0.36   0.22    0.3   	0.6		0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+ClayLoam2		100		0.36    0.35     0.36   0.22    0.3   	0.6		0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+ClayLoam3		100		0.36    0.35     0.36   0.22    0.3   	0.6		0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+ClayLoam4		100		0.36    0.35     0.36   0.22    0.3   	0.6		0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+Sands1			100		0.14    0.60     0.18   0.08    0.3   	0.6    	0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+Sands2			100		0.14    0.60     0.18   0.08    0.3   	0.6    	0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+Sands3			100		0.14    0.60     0.18   0.08    0.3   	0.6    	0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+Sands4			100		0.14    0.60     0.18   0.08    0.3   	0.6    	0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+Shallow1		35		0.32	0.38	 0.15	0.13	0.3		0.6		0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+Shallow2		35		0.32	0.38	 0.15	0.13	0.3		0.6		0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+Shallow3		35		0.32	0.38 	 0.15	0.13	0.3		0.6		0.7		0.035	0.004	35.2	 0.15   1.0    0.018   0.00035   0.1
+
+
+
+FireReductionParameters <<values estimated from Campbell et al. 2007
+>>	Severity	Wood	Litter
+>>	Fire		Reduct	Reduct
+	1			0.0		0.7
+	2			0.05	0.75
+	3			0.4		0.75
+	4			0.45	0.85
+	5			0.5		1.0
+
+   
+MonthlyMaxNPP <<PRDX(3) from Century 4.0 (g Biomass / m2)
+
+>> Species      Ecoregions
+>> --------     ------------------
+			Clay1	Clay2	Clay3	ClayLoam1	ClayLoam2	ClayLoam3	ClayLoam4	Sands1	Sands2	Sands3	Sands4	Shallow1	Shallow2	Shallow3
+AbieConc	250		250		250		250			250			250			250			250		250		250		250		250			250			250
+AbieLasi	150		204		204		150			204			204			204			150		204		204		204		150			150			150
+JuniOste	60		60		60		60			60			60			60			60		60		60		60		60			60			60
+PinuEdul	70		70		70		70			70			70			70			70		70		70		70		70			70			70
+PiceEnge	129		129		129		129			129			129			129			129		129		129		129		129			129			129
+PinuPond	100     150     150     100    		150    		150			150     	100    	150    	150		150     85    		100    		100
+PicePung	129		129		129		129			129			129			129			129		129		129		129		129			129			129
+PopuTrem	190		254		254		190			254			254			254			190		254		254		254		190			190			190
+PseuMenz	250		334		334		250			334			334			334			250		334		334		334		250			250			250	
+QuerGamb	150		200		200		150			200			200			200			150		200		200		200		125			150			150
+
+	 	   
+MaxBiomass
+>> Species      Ecoregions
+>> --------     ------------------
+			Clay1	Clay2	Clay3	ClayLoam1	ClayLoam2	ClayLoam3	ClayLoam4	Sands1	Sands2	Sands3	Sands4	Shallow1	Shallow2	Shallow3
+AbieConc	23261	23261	23261	23261		23261		23261		23261		23261	23261	23261	23261	15000		15000		15000
+AbieLasi	22206	22206	22206	22206		22206		22206		22206		22206	22206	22206	22206	2500		8000		15000
+JuniOste	8000	14000	14000	8000		14000		14000		14000		8000	14000	14000	14000	8000		8000		8000
+PinuEdul	8000	15000	15000	8000		15000		15000		15000		8000	15000	15000	15000	8000		8000		8000
+PiceEnge	7626	7626	7626	7626		7626		7626		7626		7626	7626	7626	7626 	7626		7626		7626
+PinuPond	12500	21413	21413	10000		21413		21413		21413		14000	21413	21413	21413	14000		18000		20000
+PicePung	10262	10262	10262	10262		10262		10262		10262		7500	10262	10262	10262	7500		7500		7500
+PopuTrem	25611	25611	25611	25611		25611		25611		25611		10000	25611	25611	25611	10000		10000		15000
+PseuMenz	24678	24678	24678	24678		24678		24678		24678		10000	24678	24678	24678	2500		8500		10000
+QuerGamb	25000	25000	25000	25000		25000		25000		25000		25000	25000	25000	25000	17500		17500		18500
+
+	
+
+	   
+	 
+AgeOnlyDisturbances:BiomassParameters  "E:/Landis/bio-reductions-standard.txt"
+ 	 
+		 	 
+		 	 
+			

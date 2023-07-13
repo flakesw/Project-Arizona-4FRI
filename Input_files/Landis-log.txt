@@ -1,6 +1,0 @@
-2022-03-24 17:05:51,830 - LANDIS-II 7.0 (7)
-2022-03-24 17:05:51,839 - 
-2022-03-24 17:05:51,926 - Loading scenario from file "scenario_statusquoIPSLCM5ALR.txt" ...
-2022-03-24 17:05:51,989 - Error at line 31 of file "scenario_statusquoIPSLCM5ALR.txt":
-  Error reading input value for Extension:
-    No extension with the name "Dynamic Fuel System".

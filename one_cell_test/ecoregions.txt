@@ -1,8 +1,0 @@
-LandisData	"Ecoregions"		
-
->> 	Map Code		
->>Active	Name	Description
->>--------------------------------------------------------			
-yes	1	Clay1		"Clay1"
-
-

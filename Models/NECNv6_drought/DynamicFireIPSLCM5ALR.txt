@@ -1,0 +1,100 @@
+LandisData  "Dynamic Fire System"
+
+Timestep  1
+
+>>---------------------------------------
+>> FIRE INPUTS
+>>----------------------------------------
+
+EventSizeType	size_based  		<<'size-based' or 'duration_based'
+
+
+BuildUpIndex	Y			<< yes or no; Y or N
+
+
+>> Fire Region Data Table
+>> Fire region| Fire Size   	 	| Seasonal Foliar Moisture Content (FMC) Data: Hi, Lo, and Proportion (Pr) | Other Ecorgion Data
+>>            |             	  	| Spring (Sp)            Summer (Su)             Fall (Fa)                 |           
+>> Code Name  | Mu  	Sigma 	Max 	| SpFMCLo SpFMCHi SpHiPr SuFMCLo SuFMCHi SuFMCPr FaFMCLo FaFMCHi FaHiPr    | OpenFuel NumIgns 
+>> -----------  ------------   ------------------------------------------------------------------------   ----------------
+   1    Low     5    	1 	900   	   107     119     0.00   92      119     0.23	  120     120     1.00      	  2         2
+   2    Mod     5.25    1 	1100       107     119     0.20   92      119     0.40	  120     120     1.00      	  2         6
+   3    High    5   	1 	1200       100     120     0.26   94      120     0.47	  120     120     1.00      	  16        9
+   255  inactive  0  	0 	0  	    0       0       0      0       0       0	   0       0       0         	  0         0   
+
+InitialFireEcoregionsMap  	"./FireRegion.tif"
+
+
+
+DynamicEcoregionTable
+>>Year	FileName
+
+GroundSlopeFile        		"./slope_final.tif"
+UphillSlopeAzimuthMap  		"./upslopeasp_final.tif"
+
+
+SeasonTable
+>> Season  Leaf,    Prop of  Percent  DayLength
+>> Name    Status   Fires    Curing   Proportion
+>> ------  -------  -------  -------  ----------
+   Spring  LeafOff  0.1    	50	1.0
+   Summer  LeafOn   0.7     	51	1.0
+   Fall    LeafOff  0.2     	100	1.0
+
+InitialWeatherDatabase  	"./FWI_TWX_EcoregionALL.csv"  << Initial contemporary weather file
+
+DynamicWeatherTable
+>>Year  FileName
+1	"./Climate/FWI/FWI_4FRI_Carbon_IPSLCM5ALR_2010_2019.csv"
+10	"./Climate/FWI/FWI_4FRI_Carbon_IPSLCM5ALR_2020_2029.csv"
+20	"./Climate/FWI/FWI_4FRI_Carbon_IPSLCM5ALR_2030_2039.csv"
+30	"./Climate/FWI/FWI_4FRI_Carbon_IPSLCM5ALR_2040_2049.csv"
+40	"./Climate/FWI/FWI_4FRI_Carbon_IPSLCM5ALR_2050_2059.csv"
+50	"./Climate/FWI/FWI_4FRI_Carbon_IPSLCM5ALR_2060_2069.csv"
+60	"./Climate/FWI/FWI_4FRI_Carbon_IPSLCM5ALR_2070_2079.csv"
+70	"./Climate/FWI/FWI_4FRI_Carbon_IPSLCM5ALR_2080_2089.csv"
+80	"./Climate/FWI/FWI_4FRI_Carbon_IPSLCM5ALR_2090_2099.csv"
+
+FuelTypeTable
+>> Allowed base types:  Conifer, ConiferPlantation, Deciduous, Slash, Open
+>> Allowed surface types:  See Canadian Fire Behavior System (CFBS)
+>> The fuel types in the example file (below) are derived from the CFBS.
+
+>> Index  BaseType  		SurfaceType InitProb a   b      c   q    BUI maxBE CBH
+>> -----  --------  		----------- -------- --- ---    --- ---  --- ----- ---
+   1      ConiferPlantation 	C6  	    1.0      30  0.0800 3.0 0.80 62  1.197 1  << 12 to 36	PinuPond
+   2      Conifer   		C3          1.0      110 0.0444 3.0 0.75 62  1.261 3  << 37 to 113	PinuPond
+   3      Conifer   		C7          1.0      45  0.0305 2.0 0.85 106 1.134 5 << 114 to 400	PinuPond
+   4 	  Conifer   		C7          1.0      45  0.0305 2.0 0.85 106 1.134 3 << 12 to 400	PinuPond
+   5	  Conifer   		C1          1.0      90  0.0649 4.5 0.90 72  1.076 2  << 12 to 800	JuniOste PinuEdul
+   6      Conifer   		C2           .5      110 0.0282 1.5 0.7  64  1.321 2  << 12 to 500	AbieConc AbieLasi PinuPond PseuMenz PopuTrem
+   7      Conifer   		C5          1.0      30  0.0697 4.0 0.80 56  1.220 2 << 12 to 450	AbieConc PicePung
+   8	  Deciduous 		D1          0.5      30  0.0232 1.6 0.90 32  1.179 2  << 12 to 180	PopuTrem
+   9	  Deciduous 		D1          0.5      30  0.0232 1.6 0.90 32  1.179 1  << 12 to 35	QuerGamb
+   10     Deciduous 		D1          0.5      30  0.0232 1.6 0.90 32  1.179 2  << 36 to 150	QuerGamb
+   12     Conifer   		M2          1.0      0   0      0   0.80 50  1.250 3  << mxed fuel type
+   13     Open      		O1a         1.0     190  0.0310 1.4 1.0   1  1.000 0  << 0 to 11 	AbieConc AbieLasi PinuPond PseuMenz PopuTrem
+   99	  Conifer   		C7          1.0      45  0.0305 2.0 0.85 106 1.134 7  << post thin
+   98	  Conifer   		C7          1.0      45  0.0305 2.0 0.85 106 1.134 6  << post Rx Initial
+   97     Conifer   		C7          1.0      45  0.0305 2.0 0.85 106 1.134 10  << post Rx Maintenance
+   95     Conifer   		C7          1.0      45  0.0305 2.0 0.85 106 1.134 7  << post severity 2 and 3 
+   
+   
+
+SeverityCalibrationFactor  1
+
+FireDamageTable
+>> Cohort Age       FireSeverity - 
+>> % of longevity   FireTolerance
+>> --------------   --------------
+	2.5%		-2
+	12.5%		-1
+	50%		 0
+	85%		 1
+	100%		 2
+
+
+MapNames  		fire/severity-{timestep}.img
+LogFile   		fire/dynamic-fire-test-log.csv
+SummaryLogFile 		fire/summary-log.csv
+
