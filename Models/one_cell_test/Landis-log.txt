@@ -1,0 +1,28 @@
+2023-07-28 14:56:20,128 - LANDIS-II 7.0 (7)
+2023-07-28 14:56:20,141 - 
+2023-07-28 14:56:20,212 - Loading scenario from file "scenario_necn6.txt" ...
+2023-07-28 14:56:20,284 - Initialized random number generator with seed = 1,468,917,523
+2023-07-28 14:56:20,284 - Loading species data from file "./species.txt" ...
+2023-07-28 14:56:20,308 - Loading ecoregions from file "./ecoregions.txt" ...
+2023-07-28 14:56:20,325 - Initializing landscape from ecoregions map "./rasters/ecoregions.tif" ...
+2023-07-28 14:56:20,341 - Cell length = 100 m, cell area = 1 ha
+2023-07-28 14:56:20,343 - Map dimensions: 1 row by 1 column = 1 cell
+2023-07-28 14:56:20,351 - Sites: 1 active (100.0%), 0 inactive (0.0%)
+2023-07-28 14:56:20,361 - Loading NECN Succession extension ...
+2023-07-28 14:56:20,398 -    Begin parsing NECN SPECIES table.
+2023-07-28 14:56:20,404 - Error at line 55 of file "./NECN_Succession6.txt":
+  Found the name "MaximumLAI" but expected one of these names:
+    GrassThresholdMultiplier
+    CreateInputCommunityMaps
+    StormFlowOverride
+    WaterLossFactor1Override
+    WaterLossFactor2Override
+    AnaerobicFactor1Override
+    AnaerobicFactor2Override
+    AnaerobicFactor3Override
+    ANPPMapNames
+    ANEEMapNames
+    SoilCarbonMapNames
+    SoilNitrogenMapNames
+    TotalCMapNames
+    SpeciesParameters

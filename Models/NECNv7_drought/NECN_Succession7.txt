@@ -31,8 +31,10 @@ NormalCWDMapName			"./CWD_normals.tif" <<optional, for use with drought mortalit
 
 CalibrateMode 	no
 SmokeModelOutputs yes
-Write_SWA_Maps no
-Write_CWD_Maps no
+Write_SWA_Maps yes
+Write_CWD_Maps yes
+Write_Species_Drought_Maps yes
+
 WaterDecayFunction Ratio <<Linear or Ratio
 
 
