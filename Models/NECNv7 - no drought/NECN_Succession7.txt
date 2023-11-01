@@ -1,0 +1,98 @@
+LandisData	"NECN Succession"
+
+Timestep  1
+
+SeedingAlgorithm  WardSeedDispersal
+
+InitialCommunities      "./Init_Comm_biomass.txt"
+InitialCommunitiesMap   "./Init_Comm_biomass32.tif"
+ClimateConfigFile 	"./climate-generatorIPSLCM5ALR_spinup30yrs.txt"	
+
+SoilDepthMapName			"./NECNmaps/SoilDepth.tif"
+SoilDrainMapName			"./NECNmaps/SoilDrain.tif" 
+SoilBaseFlowMapName			"./NECNmaps/SoilBaseFlow.tif" 
+SoilStormFlowMapName			"./NECNmaps/SoilStormFlow.tif"
+SoilFieldCapacityMapName		"./NECNmaps/SoilFieldCapacity.tif"
+SoilWiltingPointMapName			"./NECNmaps/SoilWiltPoint.tif"
+SoilPercentSandMapName			"./NECNmaps/soilpersand.tif"
+SoilPercentClayMapName			"./NECNmaps/soilperclay.tif"
+InitialSOM1CsurfMapName			"./NECNmaps/SOM1Csurf.tif"
+InitialSOM1NsurfMapName			"./NECNmaps/SOM1Nsurf.tif"
+InitialSOM1CsoilMapName			"./NECNmaps/SOM1Csoil.tif"
+InitialSOM1NsoilMapName			"./NECNmaps/SOM1Nsoil.tif"
+InitialSOM2CMapName			"./NECNmaps/SOM2C.tif"
+InitialSOM2NMapName			"./NECNmaps/SOM2N.tif"
+InitialSOM3CMapName			"./NECNmaps/SOM3C.tif"
+InitialSOM3NMapName			"./NECNmaps/SOM3N.tif"
+InitialDeadWoodSurfaceMapName		"./NECNmaps/InitialDeadWoodSurface.tif"
+InitialDeadCoarseRootsMapName		"./NECNmaps/InitialDeadWoodSurface.tif"
+>>NormalSWAMapName 			"./SWA_normals.tif" <<optional, for use with drought mortality. If not available yet, then make a dummy and set Use_Drought_Mortality to no, so you don't kill everything
+>>NormalCWDMapName			"./CWD_normals.tif" <<optional, for use with drought mortality
+>>SlopeMapName				"./rasters/slope.tif" <<optional, for PET adjustment for topography
+>>AspectMapName				"./rasters/aspect.tif" <<optional, for PET adjustment for topography
+
+CalibrateMode 	no
+SmokeModelOutputs yes
+Write_SWA_Maps no
+Write_CWD_Maps no
+Write_Species_Drought_Maps no
+
+WaterDecayFunction Ratio <<Linear or Ratio
+
+
+ProbabilityEstablishAdjust 	0.2
+InitialMineralN			2.4
+InitialFineFuels 		0.1  << a fraction 0-1.0 of dead wood.
+AtmosphericNSlope		0.035
+AtmosphericNIntercept		0.004
+Latitude			35.2
+DenitrificationRate		0.1
+DecayRateSurf			0.15
+DecayRateSOM1			1.0
+DecayRateSOM2			0.018
+DecayRateSOM3			0.00035
+
+SpeciesParameters "./necn_species_params.csv"
+
+FunctionalGroupParameters  "./necn_functional_params.csv"
+
+>>DroughtMortalityParameters "./necn_drought_params.csv"
+
+FireReductionParameters
+>> Updated 3/10/2022 by Sam Flake.
+>> See documentation for TCSI model
+>>	Severity	WoodLitter	Litter	  Cohort Wood 	Cohort Litter 		SOM
+>>	Fire		Reduct		Reduct	  Reduction	Reduction		Reduction
+	1		0.50		0.25	  	0	0.1			0.25 
+	2		0.62		0.5 	  	0.1	0.1			0.5
+	3		0.75		0.75		0.15	0.5			0.75
+	4		0.85		0.85		0.2	0.65			0.85 
+	5		0.95		0.95		0.2	0.75			0.95
+	6		0.99		0.99		0.2	1.0			0.99
+	7		1.0		1.0		0.2	1.0			1.0
+	8		1.0		1.0		0.2	1.0			1.0
+	9		1.0		1.0		0.3	1.0			1.0
+	10		1.0		1.0		0.3	1.0			1.0
+
+
+HarvestReductionParameters
+>>	Name		WoodLitter	Litter	SOM		CohortWood	CohortLeaf
+>>			Reduct		Reduct	Reduction	Removal		Removal
+	MaxAgeClearcut	0.5		0.15	0.2		0.8		0.15
+	PatchCutting	1.0		1.0	1.0		1.0		1.0
+	Grassland	0.9		0.14	0.1		0.95		0.25
+	Savanna		0.9		0.14	0.1		0.95		0.25
+	IT10		0.8		0.14	0.1		0.85		0.25
+	UEA10		0.8		0.14	0.1		0.85		0.25
+	SI10		0.8		0.14	0.1		0.85		0.25
+	IT25		0.8		0.14	0.1		0.85		0.25
+   	UEA25		0.8		0.14	0.1		0.85		0.25
+	SI25		0.8		0.14	0.1		0.85		0.25
+	IT40		0.8		0.14	0.1		0.85		0.25
+	UEA40		0.8		0.14	0.1		0.85		0.25
+	SI40		0.8		0.14	0.1		0.85		0.25
+	RxOnlyInitial	0.8		0.14	0.1		0.85		0.25
+RxOnlyMaintenance	0.8		0.14	0.1		0.85		0.25
+RxOnlyMaintenanceGrassland 0.8		0.14	0.1		0.85		0.25
+RxOnlyMaintenanceSavanna 0.8		0.14	0.1		0.85		0.25
+	
